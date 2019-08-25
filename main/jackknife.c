@@ -97,8 +97,8 @@ int main(void)
 			mel[i][t] = matrix_el(c[i][t], delta_E[i][t], t);
 			E_mean[t] = deltaE(c_mean[(t + 1) % N], c_mean[(t - 1 + N) % N], c_mean[t]);
 			mel_mean[t] = matrix_el(c_mean[t], E_mean[t], t);
-			E_var[t] += (delta_E[i][t] - E_mean[t]) * (delta_E[i][t] - E_mean[t]) * (Nconf - 1) / Nconf;
-			mel_var[t] += (mel[i][t] - mel_mean[t]) * (mel[i][t] - mel_mean[t]) * (Nconf - 1) / Nconf;
+			E_var[t] += (delta_E[i][t] - E_mean[t]) * (delta_E[i][t] - E_mean[t]) * (Nconf - 1.) / Nconf;
+			mel_var[t] += (mel[i][t] - mel_mean[t]) * (mel[i][t] - mel_mean[t]) * (Nconf - 1.) / Nconf;
 		}
 	}
 

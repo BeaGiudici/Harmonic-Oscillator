@@ -1,1 +1,0 @@
-# Harmonic-Oscillator
