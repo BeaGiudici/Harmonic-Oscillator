@@ -1,3 +1,6 @@
+# Harmonic-Oscillator
+
+Simulation of a quantum harmonic oscillator
 
 
 devel            Directories used for developing and testing the various 
