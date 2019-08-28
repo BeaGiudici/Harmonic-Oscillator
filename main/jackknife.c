@@ -62,7 +62,7 @@ int main(void)
 			ct = fscanf(file_in, "%lf", &c[i][t]);
 			if (feof(file_in))
 				break;
-			/*Check if the data are stored as expected*/
+			/*Check if data are stored as expected*/
 			if (ct != 1)
 			{
 				fprintf(stderr, "Unexpected error in input data.\n");

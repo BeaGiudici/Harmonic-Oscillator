@@ -30,7 +30,7 @@ for n in N:
     print('N = %i' % n)
     print('Time of the correlator: %f +- %f' % (t_corr[i], err_c[i]))
     print('Time of the metropolis: %f +- %f' % (t_metr[i], err_m[i]))
-
+print("\n")
 x = np.linspace(min(N), max(N), 100)
 
 fig1 = plt.figure(1)
@@ -42,6 +42,10 @@ plt.grid(linestyle=':')
 plt.title("Behaviour of the computational times of the correlators")
 plt.xlabel("N")
 plt.ylabel(r"$t_{corr}$ (s)")
+print("CORRELATORS")
+print("Parameters: ", best)
+print("Errors of the parameters: ", np.sqrt(np.diag(c)))
+print("Covariance: ", c)
 
 fig2 = plt.figure(2)
 plt.errorbar(N, t_metr, yerr=err_m, ls='', marker='.', markersize=1,
@@ -52,6 +56,11 @@ plt.grid(linestyle=':')
 plt.title("Behavior of the computational times of the Metropolis")
 plt.xlabel("N")
 plt.ylabel(r"$t_{metr}$ (s)")
+
+print("\nMETROPOLIS")
+print("Parameters: ", best)
+print("Errors of the parameters: ", np.sqrt(np.diag(c)))
+print("Covariance: ", c)
 
 fig1.savefig("graphs/correlators_times.png", dpi=(200), bbox_inches='tight')
 fig2.savefig("graphs/metropolis_times.png", dpi=(200), bbox_inches='tight')

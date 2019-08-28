@@ -16,5 +16,5 @@ done
 echo "]" >> ../results/cont_limit.json
 
 python3 total_fit.py > ../results/continuum.dat
-python3 times.py
+python3 times.py > ../results/final_times.dat
 cd ..

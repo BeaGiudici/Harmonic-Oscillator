@@ -54,7 +54,7 @@ plt.title('Mean of the matrix element')
 plt.errorbar(a, mel, yerr=error_mel, ls='', marker='.', markersize=1,
              elinewidth=0.5, capsize=2.5, ecolor='b')
 best, covar = curve_fit(f.quadratic, a, mel,
-                        p0=(1/np.sqrt(2), -np.sqrt(2)/32, 5*np.sqrt(2)/1024), sigma=error_mel)
+                        p0=(1/np.sqrt(2), -1*np.sqrt(2)/32, 5*np.sqrt(2)/1024), sigma=error_mel)
 plt.plot(x, f.quadratic(x, *best), ls='-', c='r')
 
 d = len(a) - len(best)  # Degree of freedom of the fit
