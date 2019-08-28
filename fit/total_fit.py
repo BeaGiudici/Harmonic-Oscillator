@@ -42,7 +42,7 @@ for i in range(len(a)):
 print('\n')
 print("\tParameters: ", best)
 print("\tError of the parameters: ", np.sqrt(np.diag(covar)))
-print("t-factor for the parameters: ",
+print("\tt-factor for the parameters: ",
       np.fabs((best - [1., -1/24, 3/640])/np.sqrt(np.diag(covar))))
 
 print("\tReduced chi-square = %f" % chi)
@@ -72,7 +72,7 @@ print('\n')
 print("\tParameters: ", best)
 print("\tErrors of the parameters: ", np.sqrt(np.diag(covar)))
 print("\tCovariance: ", covar)
-print("t-factor for the parameters: ",
+print("\tt-factor for the parameters: ",
       np.fabs((best - [1/np.sqrt(2), -np.sqrt(2)/32, 5*np.sqrt(2)/1024])/np.sqrt(np.diag(covar))))
 print("\tReduced chi-square = %f" % chi)
 print("\tCHI^2 / ndf = %f / %f" % (chi*d, d))

@@ -82,7 +82,7 @@ t, mel, err = np.genfromtxt(file_mel,
 # I consider only the values with a relative error lower than a threshold
 counter = 0
 for j in range(len(mel)):
-    if(err[j]/mel[j] < 0.0125):
+    if(err[j]/mel[j] < 0.01):
         counter += 1
 # The values are symmetric, so the final result must be divided by 2
 counter = int(counter/2)
