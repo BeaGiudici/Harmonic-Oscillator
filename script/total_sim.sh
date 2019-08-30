@@ -13,11 +13,8 @@ echo "{" >> ../results/times.json
 ./binning >> ../results/times.json
 echo "}," >> ../results/times.json
 ./jackknife
-cd ../fit
-python3 single_fit.py
 mv ../results/deltaE.dat ../results/deltaE_32.dat
 mv ../results/matrix_el.dat ../results/matrix_el_32.dat
-cd ../main
 
 echo 'CASE a = 1'
 sed "s|@n|64|g;s|@m|1.0|g;s|@w|1.0|g" ../include/global-gen.h > ../include/global.h

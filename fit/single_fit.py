@@ -9,10 +9,8 @@ import json
 import sys
 
 if len(sys.argv) == 1:
-    print('ERROR: Number of arguments not correct')
-    print('Please compile as\n\tpython3 %s <file_energies> <file_mel>' %
-          sys.argv[0])
-    exit(1)
+    print('ERROR: Number of arguments not correct\nPlease compile as\n\tpython3 single_fit.py <file_energies> <file_mel>')
+	
 else:
     file_energies = sys.argv[1]
     file_mel = sys.argv[2]
