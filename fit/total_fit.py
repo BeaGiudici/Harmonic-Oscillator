@@ -8,8 +8,9 @@ import numpy as np
 import json
 from scipy.optimize import curve_fit
 
-
+# Reading the data and store them in arrays in order to use them easily
 data = json.load(open('../results/cont_limit.json', 'r'))
+
 a = np.array([data[i]["a"] for i in range(len(data))])
 E_mean = np.array([data[i]["energy"]["value"] for i in range(len(data))])
 error_E = np.array([data[i]["energy"]["error"] for i in range(len(data))])

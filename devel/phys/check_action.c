@@ -2,7 +2,7 @@
 *
 * File check_action.c
 *
-* This program checks that action implements the basic algorithm
+* This program checks that action.c implements the basic algorithm
 * correctly
 *
 * AUTHOR: Beatrice Giudici <b.giudici1@campus.unimib.it>
@@ -28,6 +28,7 @@ int main(void)
 	double delta = 2.;
 	double alpha;
 
+	/*Initializing random number generator*/
 	rlxs_init(0, 3452);
 
 	/*Initializing the entries of the vector in a clever way, in order to compute 
@@ -43,7 +44,7 @@ int main(void)
 	fprintf(stdout, "Action: %f\n", S);
 
 	/*Computing the variation of the action for a chosen index */
-	ranlxs(r_vector, 1); /*generation of 2*N random values*/
+	ranlxs(r_vector, 1);
 	i = 4;
 	alpha = 2 * delta * (r_vector[0] - 0.5);
 	fprintf(stdout, "alpha: %f\n", alpha);

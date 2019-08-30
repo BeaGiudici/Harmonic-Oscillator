@@ -10,7 +10,7 @@ import sys
 
 if len(sys.argv) == 1:
     print('ERROR: Number of arguments not correct\nPlease compile as\n\tpython3 single_fit.py <file_energies> <file_mel>')
-	
+
 else:
     file_energies = sys.argv[1]
     file_mel = sys.argv[2]
@@ -94,7 +94,7 @@ plt.xlabel("t")
 plt.ylabel("Matrix element")
 plt.grid(linestyle=':')
 
-# Plotting the errors of the energies, when there is still signal,
+# Plotting the errors of the matrix elements, when there is still signal,
 # to underline the exponential behaviour
 if N == 512:
     fig4 = plt.figure()
@@ -128,6 +128,9 @@ with open('../results/cont_limit.json', 'a') as f:
 
 fig1.savefig('graphs/deltaE_%d.png' % N, dpi=(200), bbox_inches='tight')
 fig2.savefig('graphs/mel_%d.png' % N, dpi=(200), bbox_inches='tight')
+
+# The grtaphs of the errors are saved only for N=512, because in this case
+# the shape of the exponential is the most defined
 if N == 512:
     fig3.savefig('graphs/energy_errors.png', dpi=(200), bbox_inches='tight')
     fig4.savefig('graphs/mel_errors.png', dpi=(200), bbox_inches='tight')

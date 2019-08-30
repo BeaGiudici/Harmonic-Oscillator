@@ -29,7 +29,7 @@ int main(void)
      double alpha, dS, r1, r2;
      double delta = 2.;
      double t0 = 0.0, t1 = 0.0, t2 = 0.0; /*Tracking the time */
-     int j, i, k, t;
+     int j, i, k, t;                      /*Counters*/
 
      /*Initializing the random numbers generator */
      rlxs_init(0, 3452);
@@ -42,7 +42,8 @@ int main(void)
      for (i = 0; i < Nconf; ++i)
      {
 
-          /*Setting all the entries of the line to zero, in order to sum over all the correlators*/
+          /*Setting all the entries of the line to zero, in order to sum 
+          over all the correlators in the rebinning process*/
           for (t = 0; t < N; ++t)
           {
                c[i][t] = 0.0;
@@ -77,6 +78,8 @@ int main(void)
           }
      }
 
+     /*Printing the results, in a shape useful for writing .json files during the
+     execution of the bash*/
      fprintf(stdout, "\t\"N\" : %d,\n", N);
      fprintf(stdout, "\t\"Metropolis\" : %f,\n", (t1 - t0) / (double)(CLOCKS_PER_SEC));
      fprintf(stdout, "\t\"Correlators\" : %f\n", (t2 - t1) / (double)(CLOCKS_PER_SEC));

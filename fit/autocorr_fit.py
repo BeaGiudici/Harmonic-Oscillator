@@ -13,6 +13,7 @@ fig = plt.figure()
 plt.plot(t_M, gamma, ls='', marker='.', c='blue')
 best, cov = curve_fit(exponential, t_M, gamma, p0=(1, 1))  # Fit
 error = np.sqrt(np.diag(cov))
+
 x = np.linspace(0, len(t_M), 100)
 plt.plot(x, exponential(x, *best), c='red',
          lw=0.75, label=r'$y = A \cdot exp(-x/\tau)$')

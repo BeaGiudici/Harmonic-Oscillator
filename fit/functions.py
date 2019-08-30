@@ -1,4 +1,4 @@
-# Useful functions
+# Useful functions used in the various fits
 
 import math
 import numpy as np
