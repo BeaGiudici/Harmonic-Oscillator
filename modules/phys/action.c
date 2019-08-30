@@ -8,7 +8,7 @@
 * The externally accessible functions are
 *
 *	double lagrangian(double x, double y)
-*		Returns the disctretized (Eucledian) Lagrangian, computed 
+*		Returns the disctretized (Euclidean) Lagrangian, computed 
 *		between the points x and y
 *
 *	double action(void)

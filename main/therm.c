@@ -28,13 +28,13 @@ int main(void)
 	/*Declaration of variables*/
 	double *S;
 	int i;
-	float r3[N];
+	float r[N]; /*Vectors for random numbers generated for the hot start*/
 	FILE *file;
 
 	/*Initializing the random numbers generator */
 	rlxs_init(0, 3452);
 
-	/*Creating a ector to collect the values of the action at each sweep */
+	/*Creating a vector to collect the values of the action at each sweep */
 	S = malloc(Nsweep * sizeof(double));
 
 	/*Cold start*/
@@ -59,11 +59,11 @@ int main(void)
 	fclose(file);
 
 	/*Hot start*/
-	ranlxs(r3, N);
+	ranlxs(r, N);
 	for (i = 0; i < N; ++i)
 	{
 		/*The initial values are randomly chosen in [-10,10) */
-		xx[i] = (double)10 * (r3[i] - 0.5);
+		xx[i] = (double)10 * (r[i] - 0.5);
 	}
 
 	S[0] = action();

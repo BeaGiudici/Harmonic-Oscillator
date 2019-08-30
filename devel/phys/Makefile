@@ -19,7 +19,7 @@ all: rmxeq mkdep mkxeq
 
 # main programs and required modules 
 
-MAIN = check_action times
+MAIN = check_action times correlator
 
 RANDOM = ranlxs ranlxd gauss
 

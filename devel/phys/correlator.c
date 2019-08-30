@@ -3,7 +3,7 @@
 * File correlator.c
 *
 * This main program computes the matrix of the correlators and the mean value of the
-* correlators at any given time interval t
+* correlators at any given time interval t (note, here the rebinning does not occur)
 *
 * AUTHOR: Beatrice Giudici <b.giudici1@campus.unimib.it>
 * CREATED: 21/03/2019
@@ -54,7 +54,7 @@ int main(void)
 	}
 
 	/*Writing the mean value of the correlator with the corresponding indices t*/
-	fileCmean = fopen("../results/corr_mean.dat", "w");
+	fileCmean = fopen("../../results/corr_mean.dat", "w");
 	for (t = 0; t < N; ++t)
 	{
 		fprintf(fileCmean, "%d %f\n", t, c_mean[t]);
@@ -62,7 +62,7 @@ int main(void)
 	fclose(fileCmean);
 
 	/*Writing the matrix of the correlators on a file*/
-	file_matrix = fopen("../results/corr_matrix.bin", "wb"); /*Write the file in binary*/
+	file_matrix = fopen("../../results/corr_matrix.bin", "wb"); /*Write the file in binary*/
 	for (i = 0; i < Nsweep; ++i)
 	{
 		for (t = 0; t < N; ++t)

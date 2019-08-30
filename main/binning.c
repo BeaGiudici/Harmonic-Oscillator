@@ -30,10 +30,12 @@ int main(void)
 	/*Initializing the random numbers generator */
 	rlxs_init(0, 3452);
 
+	/*Thermalization of the chain*/
 	thermalization();
 
 	c = create_matrix(Nconf, N);
 
+	/*Initializing the vector for the mean values*/
 	mean = malloc(N * sizeof(double));
 
 	/*Correlator and rebinning*/

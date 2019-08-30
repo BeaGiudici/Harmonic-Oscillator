@@ -19,7 +19,7 @@ all: rmxeq mkdep mkxeq
 
 # main programs and required modules 
 
-MAIN = therm correlator autocorr binning jackknife
+MAIN = therm autocorr binning jackknife
 
 RANDOM = ranlxs ranlxd gauss
 

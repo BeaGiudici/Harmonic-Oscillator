@@ -55,10 +55,12 @@ int main(void)
 	{
 		for (t = 0; t < N; ++t)
 		{
+			/*In the first loop, the entries of the mean are set to zero*/
 			if (i == 0)
 			{
 				c_mean[t] = 0.0;
 			}
+
 			ct = fscanf(file_in, "%lf", &c[i][t]);
 			if (feof(file_in))
 				break;
@@ -86,7 +88,7 @@ int main(void)
 	{
 		for (t = 0; t < N; ++t)
 		{
-			/*Inizializing to zero the entries of the vectors in the first loop*/
+			/*Initializing to zero the entries of the vectors in the first loop*/
 			if (i == 0)
 			{
 				E_var[t] = 0.0;

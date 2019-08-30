@@ -3,7 +3,7 @@
 * File autocorr.c
 *
 * This main program generates the matrix of the correlators and, for a fixed time 
-* interval (chosen to be t = 5), calculates the autocorrelation function
+* interval (chosen to be t = 5), computes the autocorrelation function
 *
 * AUTHOR: Beatrice Giudici <b.giudici1@campus.unimib.it>
 * CREATED: 28/03/2019

@@ -40,7 +40,7 @@ void single_metropolis(void)
      double delta = 2.;
      int j;
 
-     /*Filling the vector with numbers generated random*/
+     /*Filling the vector with numbers generated randomly*/
      ranlxs(rf, 2 * N);
 
      for (j = 0; j < N; ++j)
@@ -49,6 +49,8 @@ void single_metropolis(void)
           r2 = (double)rf[j + N];
           alpha = 2. * delta * (r1 - 0.5);
           dS = delta_S(j, alpha);
+          /*The new configuration is accepted if dS < 0 or, if dS < 0, exp(-dS) > r2.
+          The condition with r2 is then enough*/
           if (exp(-1 * dS) > r2)
           {
                xx[j] += alpha;
