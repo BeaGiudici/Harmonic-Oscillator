@@ -49,7 +49,7 @@ void single_metropolis(void)
           r2 = (double)rf[j + N];
           alpha = 2. * delta * (r1 - 0.5);
           dS = delta_S(j, alpha);
-          /*The new configuration is accepted if dS < 0 or, if dS < 0, exp(-dS) > r2.
+          /*The new configuration is accepted if dS < 0 or, if dS > 0, exp(-dS) > r2.
           The condition with r2 is then enough*/
           if (exp(-1 * dS) > r2)
           {

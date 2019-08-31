@@ -29,7 +29,7 @@ Function for a linear fit
 
 def quadratic(x, *par):
     '''
-Function for a linear fit
+Function for a quadratic fit
     '''
     return par[0] + par[1]*x + par[2]*x*x
 

@@ -83,4 +83,4 @@ make clean
 echo 'FIT'
 cd ../script
 . ./fit.sh
-cd ..
+

@@ -80,6 +80,7 @@ int main(void)
 	{
 		for (t = 0; t < N; ++t)
 		{
+
 			c[i][t] = c_mean[t] - (c[i][t] - c_mean[t]) / (Nconf - 1);
 		}
 	}

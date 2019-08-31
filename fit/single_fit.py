@@ -9,8 +9,8 @@ import json
 import sys
 
 if len(sys.argv) == 1:
-    print('ERROR: Number of arguments not correct\nPlease compile as\n\tpython3 single_fit.py <file_energies> <file_mel>')
-
+    file_energies = '../results/deltaE.dat'
+    file_mel = '../results/matrix_el.dat'
 else:
     file_energies = sys.argv[1]
     file_mel = sys.argv[2]
@@ -29,11 +29,11 @@ results["a"] = 64/N
 
 # I consider only the values with a relative error lower than a threshold
 counter = 0
-for j in range(len(dE)):
-    if(err[j]/dE[j] < 0.008):
+for j in range(int(len(dE)/2)):
+    if(err[j]/dE[j] < 0.00012):
         counter += 1
-# The values are symmetric, so the final result must be divided by 2
-counter = int(counter/2)
+    if(err[j+1]/dE[j+1] > 0.00012 or err[j+1] == -nan):
+        break
 
 # Plotting the energy differences with their errors
 fig1 = plt.figure()
@@ -52,24 +52,17 @@ if N == 512:
     plt.xlabel("t")
     plt.ylabel(r"$\sigma_r$")
     plt.grid(linestyle=':')
-    plt.plot(t[:counter+1], err[:counter+1]/dE[:counter+1],
+    plt.plot(t[1:counter+1], err[1:counter+1]/dE[1:counter+1],
              ls='', marker='.', c='blue')
 
-# Calculating the mean of the energies and its error
-if counter != 0:
-    if counter < 5:
-        weight = list(map(lambda x: 1/(x*x), err[1:counter+1]))
-        results["energy"]["value"] = sum(dE[1:counter+1]*weight) / sum(weight)
-        results["energy"]["error"] = np.sqrt(1/sum(weight))
-    else:
-        results["energy"]["value"] = sum(dE[1:counter+1]) / counter
-        mean2 = sum(dE[1:counter+1]*dE[1:counter+1]) / counter
-        results["energy"]["error"] = np.sqrt(
-            mean2 - results["energy"]["value"]**2)
+if counter > 1:
+    results["energy"]["value"] = np.sum(dE[1:counter+1])/counter
+    mean2 = np.sum(dE[1:counter+1]*dE[1:counter+1])/counter
+    results["energy"]["error"] = np.sqrt(
+        (mean2 - results["energy"]["value"]*results["energy"]["value"])/counter)
 else:
     results["energy"]["value"] = dE[1]
     results["energy"]["error"] = err[1]
-
 
 # MATRIX ELEMENTS
 with open(file_mel, 'r') as f:
@@ -79,11 +72,11 @@ t, mel, err = np.genfromtxt(file_mel,
 
 # I consider only the values with a relative error lower than a threshold
 counter = 0
-for j in range(len(mel)):
-    if(err[j]/mel[j] < 0.01):
+for j in range(int(len(mel)/2)):
+    if(err[j]/mel[j] < 0.0125):
         counter += 1
-# The values are symmetric, so the final result must be divided by 2
-counter = int(counter/2)
+    if(err[j+1]/mel[j+1] > 0.0125 or err[j+1] == -nan):
+        break
 
 # Plotting the matrix elements and their errors
 fig2 = plt.figure()
@@ -102,21 +95,16 @@ if N == 512:
     plt.xlabel("t")
     plt.ylabel(r"$\sigma_r$")
     plt.grid(linestyle=':')
-    plt.plot(t[:counter+1], err[:counter+1]/mel[:counter+1],
+    plt.plot(t[1:counter+1], err[1:counter+1]/mel[1:counter+1],
              ls='', marker='.', c='blue')
 
+# Computing mean value and error
+if counter > 1:
+    results["mel"]["value"] = np.sum(mel[1:counter+1])/counter
+    mean2 = np.sum(mel[1:counter+1]*mel[1:counter+1])/counter
+    results["mel"]["error"] = np.sqrt(
+        (mean2 - results["mel"]["value"]*results["mel"]["value"])/counter)
 
-# Calculating the mean of the matrix elements and its error
-if counter != 0:
-    if counter < 5:
-        weight = list(map(lambda x: 1/(x*x), err[1:counter+1]))
-        results["mel"]["value"] = sum(mel[1:counter+1]*weight) / sum(weight)
-        results["mel"]["error"] = np.sqrt(1/sum(weight))
-    else:
-        results["mel"]["value"] = sum(mel[1:counter+1]) / counter
-        mean2 = sum(mel[1:counter+1]*mel[1:counter+1]) / counter
-        results["mel"]["error"] = np.sqrt(
-            mean2 - results["mel"]["value"]**2)
 else:
     results["mel"]["value"] = mel[1]
     results["mel"]["error"] = err[1]
