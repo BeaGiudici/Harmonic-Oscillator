@@ -27,12 +27,14 @@ with open(file_energies, 'r') as f:
 t, dE, err = np.genfromtxt(file_energies, unpack=True, skip_header=1)
 results["a"] = 64/N
 
-# I consider only the values with a relative error lower than a threshold
+# I consider only the values with a relative error lower than a threshold 
+# (I do it only in order to create the graph of the relative errors, the actual final result
+# is given by choosing the first value of each sample)
 counter = 0
 for j in range(int(len(dE)/2)):
-    if(err[j]/dE[j] < 0.00012):
+    if(err[j]/dE[j] < 0.01):
         counter += 1
-    if(err[j+1]/dE[j+1] > 0.00012 or err[j+1] == -nan):
+    if(err[j+1]/dE[j+1] > 0.01 or err[j+1] == -nan):
         break
 
 # Plotting the energy differences with their errors
@@ -55,14 +57,8 @@ if N == 512:
     plt.plot(t[1:counter+1], err[1:counter+1]/dE[1:counter+1],
              ls='', marker='.', c='blue')
 
-if counter > 1:
-    results["energy"]["value"] = np.sum(dE[1:counter+1])/counter
-    mean2 = np.sum(dE[1:counter+1]*dE[1:counter+1])/counter
-    results["energy"]["error"] = np.sqrt(
-        (mean2 - results["energy"]["value"]*results["energy"]["value"])/counter)
-else:
-    results["energy"]["value"] = dE[1]
-    results["energy"]["error"] = err[1]
+results["energy"]["value"] = dE[1]
+results["energy"]["error"] = err[1]
 
 # MATRIX ELEMENTS
 with open(file_mel, 'r') as f:

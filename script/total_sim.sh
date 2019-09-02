@@ -36,16 +36,6 @@ echo "}," >> ../results/times.json
 mv ../results/deltaE.dat ../results/deltaE_128.dat
 mv ../results/matrix_el.dat ../results/matrix_el_128.dat
 
-echo 'CASE a = 0.4'
-sed "s|@n|160|g;s|@m|2.5|g;s|@w|0.4|g" ../include/global-gen.h > ../include/global.h
-make binning jackknife > garbage.dat
-echo "{" >> ../results/times.json
-./binning >> ../results/times.json
-echo "}," >> ../results/times.json
-./jackknife
-mv ../results/deltaE.dat ../results/deltaE_160.dat
-mv ../results/matrix_el.dat ../results/matrix_el_160.dat
-
 echo 'CASE a = 0.25'
 sed "s|@n|256|g;s|@m|4.0|g;s|@w|0.25|g" ../include/global-gen.h > ../include/global.h
 make binning jackknife > garbage.dat

@@ -13,9 +13,9 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-#define N 512
-#define M 8.0
-#define W 0.125
+#define N 256
+#define M 4.0
+#define W 0.25
 
 /*Nsweep is set at the value 1e7*/
 #define N_therm 200 /*about ten times the thermalization time of the Markov chain*/

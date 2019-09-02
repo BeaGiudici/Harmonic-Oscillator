@@ -1,16 +1,211 @@
 [
 {
+	"N" : 32,
+	"Metropolis" : 15.247741,
+	"Correlators" : 19.198897
 },
 {
+	"N" : 64,
+	"Metropolis" : 24.750911,
+	"Correlators" : 61.680743
 },
 {
+	"N" : 128,
+	"Metropolis" : 42.239307,
+	"Correlators" : 211.182229
 },
 {
+	"N" : 256,
+	"Metropolis" : 72.846584,
+	"Correlators" : 789.683510
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.248043,
+	"Correlators" : 19.289386
 },
 {
+	"N" : 64,
+	"Metropolis" : 24.892653,
+	"Correlators" : 61.649739
 },
 {
+	"N" : 128,
+	"Metropolis" : 42.325611,
+	"Correlators" : 210.554767
 },
 {
+	"N" : 256,
+	"Metropolis" : 73.192550,
+	"Correlators" : 789.283214
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.206691,
+	"Correlators" : 19.224001
+},
+{
+	"N" : 64,
+	"Metropolis" : 25.025960,
+	"Correlators" : 62.189661
+},
+{
+	"N" : 128,
+	"Metropolis" : 42.114350,
+	"Correlators" : 210.613306
+},
+{
+	"N" : 256,
+	"Metropolis" : 72.713737,
+	"Correlators" : 789.836805
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.260625,
+	"Correlators" : 19.331291
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.677924,
+	"Correlators" : 61.732855
+},
+{
+	"N" : 128,
+	"Metropolis" : 41.852057,
+	"Correlators" : 210.701358
+},
+{
+	"N" : 256,
+	"Metropolis" : 73.031033,
+	"Correlators" : 788.719396
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.257478,
+	"Correlators" : 19.170595
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.979821,
+	"Correlators" : 61.633681
+},
+{
+	"N" : 128,
+	"Metropolis" : 41.921882,
+	"Correlators" : 210.707250
+},
+{
+	"N" : 256,
+	"Metropolis" : 73.115449,
+	"Correlators" : 788.923430
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.231080,
+	"Correlators" : 19.202246
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.691325,
+	"Correlators" : 61.661943
+},
+{
+	"N" : 128,
+	"Metropolis" : 42.355379,
+	"Correlators" : 210.666177
+},
+{
+	"N" : 256,
+	"Metropolis" : 73.113133,
+	"Correlators" : 788.721989
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.292525,
+	"Correlators" : 19.348845
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.588752,
+	"Correlators" : 61.625463
+},
+{
+	"N" : 128,
+	"Metropolis" : 41.908411,
+	"Correlators" : 210.644967
+},
+{
+	"N" : 256,
+	"Metropolis" : 73.133995,
+	"Correlators" : 788.729897
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.254234,
+	"Correlators" : 19.214599
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.936842,
+	"Correlators" : 61.762443
+},
+{
+	"N" : 128,
+	"Metropolis" : 41.875751,
+	"Correlators" : 210.513958
+},
+{
+	"N" : 256,
+	"Metropolis" : 73.950068,
+	"Correlators" : 789.378107
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.236658,
+	"Correlators" : 19.287457
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.911146,
+	"Correlators" : 61.672384
+},
+{
+	"N" : 128,
+	"Metropolis" : 42.059784,
+	"Correlators" : 210.458320
+},
+{
+	"N" : 256,
+	"Metropolis" : 72.665465,
+	"Correlators" : 789.215096
+}
+,
+{
+	"N" : 32,
+	"Metropolis" : 15.264436,
+	"Correlators" : 19.326404
+},
+{
+	"N" : 64,
+	"Metropolis" : 24.676952,
+	"Correlators" : 61.672198
+},
+{
+	"N" : 128,
+	"Metropolis" : 41.776058,
+	"Correlators" : 210.497220
+},
+{
+	"N" : 256,
+	"Metropolis" : 72.732940,
+	"Correlators" : 789.434617
 }
 ]
